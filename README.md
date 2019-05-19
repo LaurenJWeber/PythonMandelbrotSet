@@ -8,7 +8,7 @@ Plot with Matplotlib.
 
 Developed and tested against Python 2.7.15
 
-# Checkout Instructions
+## Checkout Instructions
 git clone https://github.com/LaurenJWeber/PythonMandelbrotSet.git
 
 Install the latest Matplotlib for python 2.7
