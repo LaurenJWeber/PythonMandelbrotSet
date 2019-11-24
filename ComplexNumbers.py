@@ -8,42 +8,73 @@ import math
 # and an indicator of membership in the Mandelbrot set
 ###############################################################################
 
+
 class ComplexNumber:
 
-    def __init__(self, realPart, imaginaryPart):
-        self.re = realPart
-        self.im = imaginaryPart
-        self.mag = math.sqrt(realPart * realPart + imaginaryPart * imaginaryPart)
-        self.isMandelbrot = None    #Unknown until we run the classification.
+    def __init__(self, real_part, imaginary_part):
+        self.re = real_part
+        self.im = imaginary_part
+        self.mag = math.sqrt(real_part * real_part + imaginary_part * imaginary_part)
+        self.is_mandelbrot = None    # Unknown until we run the classification.
 
-    def Set(self, realPart, imaginaryPart):
-        self.re = realPart
-        self.im = imaginaryPart
-        self.mag = math.sqrt(realPart * realPart + imaginaryPart * imaginaryPart)
+    def set(self, real_part, imaginary_part):
+        """ Set the values for a complex number, calculate its magnitude.
 
-    def PrintAttributes(self):
-        print ("Real: {re}, Imaginary: {im}, magnitude: {mag}, isMandelbrot: {mand}"
-              .format(re = self.re, im = self.im, mag = self.mag, mand = self.isMandelbrot))
+            Arguments:
+            real_part - the real part
+            imaginary_part - the imaginary part
+        """
+        self.re = real_part
+        self.im = imaginary_part
+        self.mag = math.sqrt(real_part * real_part + imaginary_part * imaginary_part)
+
+    def print_attributes(self):
+        """ Print the real and imaginary parts of a complex number,
+            along with the magnitude, and whether the number is a
+            member of the Mandelbrot set.
+        """
+        print("Real:", self.re, "Imaginary:", self.im, "Magnitude:", self.mag, "is Mandelbrot:", self.is_mandelbrot)
 
 ###############################################################################
 # Arithmetic operators for complex numbers: add, subtract, multiply
 ###############################################################################
 
+
 class ComplexOperator:
 
-    def Add(self, cn1, cn2):
+    def add(self, cn1, cn2):
+        """ Add two complex numbers, return the sum.
+
+            Arguments:
+            cn1 - first addend
+            cn2 - second addend
+        """
         cn3 = ComplexNumber(cn1.re + cn2.re, cn1.im + cn2.im)
         return cn3
 
-    def Subtract(self, cn1, cn2):
+    def subtract(self, cn1, cn2):
+        """ Subtract the second complex number from the first, return the difference.
+
+            Arguments:
+            cn1 - minuend
+            cn2 - subtrahend
+        """
         cn3 = ComplexNumber(cn1.re - cn2.re, cn1.im - cn2.im)
         return cn3
 
-    # i^2 = -1
-    # (a + xi)(b + yi) = ab-xy + (ay+bx)i
+    def multiply(self, cn1, cn2):
+        """ Multiply two complex numbers, return the product.
 
-    def Multiply(self, cn1, cn2):
+            Arguments:
+            cn1 - multiplier
+            cn2 - multiplicand
+        """
+
+        # i^2 = -1
+        # (a + xi)(b + yi) = ab-xy + (ay+bx)i
         real = cn1.re * cn2.re - cn1.im * cn2.im
         imag = cn1.re * cn2.im + cn2.re * cn1.im
         cn3 = ComplexNumber(real, imag)
         return cn3
+
+    # TODO: Add divide method.

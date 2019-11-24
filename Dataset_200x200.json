@@ -1,10 +1,10 @@
 {
-    "realStart" : -2.0,
-    "realDelta" : 0.02,
-    "realSteps" : 200,
-    "imaginaryStart" : -2.0,
-    "imaginaryDelta" : 0.02,
-    "imaginarySteps" : 200,
-    "upperBound" : 2.0,
-    "maxIterations" : 15
+    "real_start" : -2.0,
+    "real_delta" : 0.02,
+    "real_steps" : 200,
+    "imaginary_start" : -2.0,
+    "imaginary_delta" : 0.02,
+    "imaginary_steps" : 200,
+    "upper_bound" : 2.0,
+    "max_iterations" : 15
 }

@@ -6,9 +6,9 @@ Generate the fractal pattern with the data set  specified in the Json configurat
 
 Plot with Matplotlib.
 
-Developed and tested against Python 2.7.15
+Developed and tested against Python 3.7.3
 
 ## Checkout Instructions
 git clone https://github.com/LaurenJWeber/PythonMandelbrotSet.git
 
-Install the latest Matplotlib for python 2.7
+Install the latest matplotlib for python 3.7
